@@ -1,7 +1,7 @@
 # Path based routing app with Static IP example
 This is an example architecture realizing Path-based routing with Static IP addresses by using AWS NLB (Network Load Balancer) and ALB (Application Load Balancer).  
 
-ALB provides a path-based load balancing feature, however the IP addresses of it may dynamically change, which may be a challenge in some case.  For example, domain name of ALB could not be resolved in hybrid enviromnent.  
+ALB provides a path-based load balancing feature, however the IP addresses of it may dynamically change, which may be a challenge in some cases.  For example, domain name of ALB could not be resolved in hybrid enviromnent.  
 
 NLB provides a feature of static IP address and ALB is supported as a load balancing target of NLB. So, we can realize Path-based routing with Static IP address by using this feature.
 
@@ -11,7 +11,7 @@ As an example, we can deploy the following architecture example by using CloudFo
 ![Architecture](/img/architecture.png)
 
 As the example applications, the template deploys three applications which are Default, App1 and App2 and they can be accessed through the paths `/`, `/app1` and `/app2` respectively.
-ALB takes case of forwarding the request to those application based on its path and it is set as a target of NLB which has two static IP addresses (In this example, `10.0.10.30` and `10.0.11.30`)
+ALB takes care of forwarding the request to those application based on its path and it is set as a target of NLB which has two static IP addresses (In this example, `10.0.10.30` and `10.0.11.30`)
 
 # Sample Application
 The sample application can be built by the following commnad. The image need to be pushed on container repository like ECR and can be pulled by ECS.
